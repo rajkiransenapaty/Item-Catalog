@@ -96,6 +96,7 @@ def showCategoryItem(catalog_id, item_id):
 
 
 @app.route('/catalog/add', methods=['GET', 'POST'])
+@login_required
 def addCategoryItem():
     # Check if user is logged in
     if 'username' not in login_session:
@@ -127,6 +128,7 @@ def addCategoryItem():
 
 
 @app.route('/catalog/<int:catalog_id>/items/<int:item_id>/edit', methods=['GET', 'POST'])
+@login_required
 def editCategoryItem(catalog_id, item_id):
     # Check if user is logged in
     if 'username' not in login_session:
@@ -158,6 +160,7 @@ def editCategoryItem(catalog_id, item_id):
 
 
 @app.route('/catalog/<int:catalog_id>/items/<int:item_id>/delete', methods=['GET', 'POST'])
+@login_required
 def deleteCategoryItem(catalog_id, item_id):
         # Check if user is logged in
     if 'username' not in login_session:
