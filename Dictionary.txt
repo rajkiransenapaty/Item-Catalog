@@ -1,0 +1,11 @@
+#take input in a dictionary format. e.g-{"Exp1":"2+3-5","Exp2": "4*5-3", "Exp3":"4/2+5-9"}
+input_dict=eval(input())
+output_dict={}
+count=1
+for i in input_dict.values():
+    ans= eval(i)
+    a=int(ans)
+    output_dict["Ans"+str(count)]=str(a)
+    count+=1
+   
+print(output_dict)

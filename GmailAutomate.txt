@@ -1,0 +1,56 @@
+package saMplE;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.internal.ProfilesIni;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class d1 {
+	static WebDriver pilot;
+	public static void main(String[] args) {
+		//using chrome driver//
+		System.setProperty("webdriver.chrome.driver","D:\\chromedriver.exe");
+		
+		//using IE driver//
+//		System.setProperty("webdriver.ie.driver","D:\\IEDriverServer.exe");
+		
+		//using gecko driver//
+//		System.setProperty("webdriver.gecko.driver","D:\\geckodriver.exe");
+		
+//		ProfilesIni profile = new ProfilesIni();
+//		FirefoxProfile myprofile = profile.getProfile("Rajkiran");
+//		FirefoxOptions fopt=new FirefoxOptions();
+//		fopt.setProfile(myprofile);
+		
+		//		creating a chromedriver object with options
+//		ChromeOptions copt=new ChromeOptions();
+//		copt.addArguments("--incognito");
+		pilot=new ChromeDriver();
+		
+		
+		//		creating a firefoxdriver object with options
+//		pilot=new FirefoxDriver(fopt);
+		
+		
+		//		creating a InternetExplorerdriver object
+//		pilot=new InternetExplorerDriver();
+		
+		
+		WebDriverWait wt=new WebDriverWait(pilot,8);
+		pilot.navigate().to("https://mail.google.com/mail/");
+		//input[@type='email']
+		//span[contains(text(),'Next')]
+		wt.until(ExpectedConditions.visibilityOfElementLocated(By.id("identifierId"))).sendKeys("...Provide your Mail ID...");
+		wt.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Next')]"))).click();
+		wt.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='password']"))).sendKeys("...Provide your Gmail password...");
+		wt.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Next')]"))).click();
+	}
+
+}

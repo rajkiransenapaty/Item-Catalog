@@ -1,0 +1,14 @@
+package testPack;
+
+public class OpenExe {
+
+public static void main(String[] args)
+{
+try {
+System.out.println(Runtime.getRuntime().exec("c:\\Windows\\notepad.exe"));
+}catch(Exception e) {
+e.printStackTrace();
+}
+}
+
+}
