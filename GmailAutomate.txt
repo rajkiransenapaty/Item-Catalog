@@ -61,6 +61,15 @@ driver.findElement(By.xpath("//input[@name='passenger']")).click();
 		
 		driver.findElement(By.xpath("//div[@class='passenger-dropdown pax-selection-row']//li[@class='adult-pax-list']//button[@class='pax-plus btn btn-info']")).click();
 			
-		driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
-		System.out.println(driver.findElement(By.xpath("//button[@class='btn btn-primary']")).getText());
+		driver.findElement(By.xpath("//div[@class='passenger-done-blck']//button")).click();
+		System.out.println(driver.findElement(By.xpath("//div[@class='passenger-done-blck']//button")).getText());
+		
+		driver.findElement(By.xpath("//button[@class='btn btn-primary block bold ig-search-btn ig-common-cta addLoader']")).click();
+		driver.findElement(By.xpath("//div[@class='col-auto']//button[@class='filter'][contains(text(),'Price')]")).click();
+		driver.findElement(By.xpath("//button[@id='continue-button']")).click();
+		
+		driver.findElement(By.xpath("//input[@name='mobileNum']")).sendKeys("7735846165");
+		driver.findElement(By.xpath("//input[@name='emailId']")).sendKeys("sfsdfsd");
+		
+		
 		
