@@ -54,3 +54,13 @@ public class d1 {
 	}
 
 }
+
+
+driver.findElement(By.xpath("//input[@name='passenger']")).click();
+		System.out.println(driver.findElement(By.xpath("//div[@class='passenger-dropdown pax-selection-row']//input[@class='counter adult-pax'][@type='text']")).getText());
+		
+		driver.findElement(By.xpath("//div[@class='passenger-dropdown pax-selection-row']//li[@class='adult-pax-list']//button[@class='pax-plus btn btn-info']")).click();
+			
+		driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
+		System.out.println(driver.findElement(By.xpath("//button[@class='btn btn-primary']")).getText());
+		
